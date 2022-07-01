@@ -8,25 +8,27 @@ install.packages(c("hash", "tau", "Sejong", "RSQLite", "devtools", "bit", "rex",
 
 install.packages("remotes")
 remotes::install_github('haven-jeon/KoNLP', upgrade = "never", INSTALL_opts=c("--no-multiarch"))
-
+install.packages("dplyr")
+install.packages("wordcloud")
 library(KoNLP)
 
-library(dplyr); 
-library(stringr); 
-library(wordcloud); 
+library(dplyr)
+library(stringr)
+
+library(wordcloud) 
 library(RColorBrewer)
 
 
 # 1) 데이터 불러오기
 
 busan <- read.csv("busan_2018_ANSI.csv", stringsAsFactors = FALSE, head = TRUE)
-
+# View(busan)
 # 2) 어간 추출하기
 print("어간 추출 중입니다. 잠시만 기다려주세요.")
 words <- extractNoun(busan$역명및.지명유래)
 un_words <- unlist(words)
-
-# 3) 확인 후 전처리 
+# head(un_words)
+# 3) 확인 후 전처리
 print("전처리 중입니다. 잠시만 기다려주세요.")
 wordcount <- table(un_words)
 wordcount %>% sort(decreasing = TRUE) %>%
@@ -59,8 +61,10 @@ df <- rename(df,
              freq = Freq,
              words = un_words)
 df <- filter(df, str_length(words) >= 2)
-top50 <- df %>% arrange(desc(freq)) %>% head(50)
 
+View(df)
+top50 <- df %>% arrange(desc(freq)) %>% head(50)
+head(top50)
 
 
 # 워드클라우드 
