@@ -4,8 +4,8 @@ library(dplyr)
 
 # 1) 데이터 불러오기
 
-busan <- read.csv("busan_2018_ANSI.csv", stringsAsFactors=FALSE, header = TRUE)
-head(busan)
+busan <- read.csv("busan_2018.csv", stringsAsFactors=FALSE, header = TRUE,fileEncoding="UTF-8-BOM")
+# head(busan)
 # 2) 정규표현식 만들기
 
 number <- regex("

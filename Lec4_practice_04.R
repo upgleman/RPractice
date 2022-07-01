@@ -21,7 +21,7 @@ library(RColorBrewer)
 
 # 1) 데이터 불러오기
 
-busan <- read.csv("busan_2018_ANSI.csv", stringsAsFactors = FALSE, head = TRUE)
+busan <- read.csv("busan_2018.csv", stringsAsFactors = FALSE, head = TRUE,fileEncoding="UTF-8-BOM")
 # View(busan)
 # 2) 어간 추출하기
 print("어간 추출 중입니다. 잠시만 기다려주세요.")

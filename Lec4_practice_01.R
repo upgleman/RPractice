@@ -20,7 +20,7 @@ library(RColorBrewer)
 
 # 1) 데이터 불러오기
 
-assem <- read.csv("assembly_ANSI.csv", stringsAsFactors = FALSE, header = TRUE)
+assem <- read.csv("assembly.csv", stringsAsFactors = FALSE, header = TRUE,fileEncoding="UTF-8-BOM")
 
 
 # 2) 어간 추출하기
