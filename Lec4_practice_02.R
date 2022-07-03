@@ -14,7 +14,7 @@ set.seed(1234)
 
 trump <- readLines("trump.txt", encoding = "UTF-8")
   
-# head(trump)
+head(trump)
 doc_ids <- seq(1, length(trump), 1)
 df <- data.frame(doc_id = doc_ids, text = trump, stringsAsFactors = FALSE)
 head(doc_ids)
