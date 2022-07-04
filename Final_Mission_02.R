@@ -27,3 +27,14 @@ inter
 # inter
 only_number <- str_c(inter$V3,inter$V4, sep = ".")
 only_number
+
+
+#답변 받은 정답
+# 1) 데이터와 정규표현식 매칭하기 
+# inter <- str_match(numbers, country)
+# inter
+
+# 2) 형식 바꾸기
+
+# only_number <- str_c(inter[,3], inter[,4], sep = ".")
+# only_number
