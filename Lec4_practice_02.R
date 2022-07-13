@@ -15,11 +15,14 @@ set.seed(1234)
 trump <- readLines("trump.txt", encoding = "UTF-8")
   
 head(trump)
+#라인별 번호 추가
 doc_ids <- seq(1, length(trump), 1)
 df <- data.frame(doc_id = doc_ids, text = trump, stringsAsFactors = FALSE)
-head(doc_ids)
+# head(df)
+#데이터를 Corpus로 로드함
 docs <- Corpus(DataframeSource(df))
-  
+#문서 내용 검사
+inspect(head(docs))
 #2)전처리
 
 #1. 소문자 처리
@@ -30,7 +33,7 @@ docs <- tm_map(docs, content_transformer(tolower))
   
 docs <- tm_map(docs, removeNumbers)
   
-#3. 구두점 제거
+#3. 구두점 제거 '...'
   
 docs <- tm_map(docs, removePunctuation)
   

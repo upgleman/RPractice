@@ -6,7 +6,7 @@ library(dplyr)
 
 #1) 데이터 읽어오기
 goryeo <- readLines("청산별곡.txt", encoding = "UTF-8")
-# head(goryeo)
+head(goryeo)
 # summary(goryeo)
 #2) 각 구절의 가사 문자열 길이 확인하기 
 

@@ -5,7 +5,7 @@ library(dplyr)
 
 # 데이터 가져오기 
 numbers <- read.table("numbers.txt", sep = "\n", header=FALSE, stringsAsFactors =FALSE, fileEncoding = "UTF-8")
-
+print(numbers)
 # 정규표현식 짜기
 country <- regex("
   \\(? 
@@ -19,8 +19,8 @@ country <- regex("
 # 1) 데이터와 정규표현식 매칭하기 
 
 inter <-str_match(numbers$V1,country)
-
-
+# View(inter)
+print(inter)
 # 2) 형식 바꾸기
 inter <- as.data.frame(inter)
 inter
