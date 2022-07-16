@@ -12,7 +12,7 @@ plane_ages <- planes %>%
 
 plane_ages
 
-
+summary(plane_ages)
 
 
 
